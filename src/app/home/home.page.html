@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" (click)="cambiarUsuario()">
   <ion-toolbar>
     <ion-title>
       Blank
@@ -7,14 +7,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div 
+    *ngFor="let m of mensajes"
+      [class]="m.usuario==usuario?'mensaje-yo':'mensaje'"
+    >
+    <label>{{m.texto}}</label>
+    </div>
+
+  
 </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-input [(ngModel)]="textoMensaje"></ion-input>
+      <ion-buttons slot="end">
+        <ion-icon color="primary" name="send" (click)="onClickEnviar()"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
