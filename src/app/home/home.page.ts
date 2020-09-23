@@ -16,11 +16,13 @@ export class HomePage {
 
   ngOnInit(){
     this.socket.connect()
-    console.log("Suscribiendo");
-    
-    this.socket.fromEvent("message").subscribe(message=>{
-      console.log("Mjjj",message)
-      this.mensajes = message
+    this.socket.emit("join",{username:"Jorge",room:"testroom"})
+    this.socket.fromEvent("message").subscribe((message:any)=>{
+      if(message.tipo=='alerta')
+        console.log(message.mensaje);
+      else
+        this.mensajes = message
+      
     })
   }
 
