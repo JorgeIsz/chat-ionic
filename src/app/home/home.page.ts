@@ -16,8 +16,10 @@ export class HomePage {
 
   ngOnInit(){
     this.socket.connect()
-    this.socket.emit("join",{username:"Jorge",room:"testroom"})
+    this.socket.emit("join",{username:"Jorge",room:"laroom"})
     this.socket.fromEvent("message").subscribe((message:any)=>{
+      console.log(message);
+      
       if(message.tipo=='alerta')
         console.log(message.mensaje);
       else
@@ -29,9 +31,10 @@ export class HomePage {
   onClickEnviar(){
     const mensaje = {
       texto:this.textoMensaje,
-      usuario:this.usuario
+      usuario:this.usuario,
+      room:"laroom"
     }
-    this.socket.emit("message",mensaje)
+    this.socket.emit("mensaje-entra",mensaje)
     this.textoMensaje = ""
   }
 

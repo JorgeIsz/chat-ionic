@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { SocketService } from './core/services/socket.service';
 
-const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
+const config: SocketIoConfig = { url: 'https://chsflask.herokuapp.com', options: {transports:["polling"]} };
 
 @NgModule({
   declarations: [AppComponent],
