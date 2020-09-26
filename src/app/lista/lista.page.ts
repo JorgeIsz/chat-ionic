@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaPage implements OnInit {
 
+  public rooms = [
+    {idstr:"127"},
+    {idstr:"543"},
+    {idstr:"57"},
+    {idstr:"48"},
+    {idstr:"93"},
+  ]
+
   constructor() { }
 
   ngOnInit() {

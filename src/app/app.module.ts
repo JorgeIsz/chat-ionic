@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { UserInfoProvider } from './core/services/userinfo-provider';
 
-const config: SocketIoConfig = { url: 'https://almuchat.herokuapp.com', options: {transports:["polling"]} };
+const config: SocketIoConfig = { url: 'http://localhost:5000', options: {transports:["polling"]} };
 
 @NgModule({
   declarations: [AppComponent],
