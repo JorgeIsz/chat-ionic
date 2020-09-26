@@ -18,10 +18,8 @@ export class HomePage {
     this.socket.connect()
     this.socket.emit("join",{username:"Jorge",room:"laroom"})
     this.socket.fromEvent("message").subscribe((message:any)=>{
-      console.log(message);
-      
       if(message.tipo=='alerta')
-        console.log(message.mensaje);
+        console.log(message);
       else
         this.mensajes = message
       
@@ -40,7 +38,12 @@ export class HomePage {
 
   cambiarUsuario(){
     this.usuario = "2"
-    console.log("us",this.usuario);
+    const estado = {
+      estado:"Escribiendo...",
+      usuario:this.usuario,
+      room:"laroom"
+    }
+    this.socket.emit("estado-cambiado",estado)
     
   }
 

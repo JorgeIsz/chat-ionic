@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ionic Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input [(ngModel)]="username"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Room</ion-label>
+        <ion-input [(ngModel)]="room"></ion-input>
+      </ion-item>
+      <ion-button (click)="onClickContinuar()" expand="block">Continuar</ion-button>
+    </ion-list>
+  </div>
+  
+
+</ion-content>

@@ -9,9 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import { SocketService } from './core/services/socket.service';
+import { UserInfoProvider } from './core/services/userinfo-provider';
 
-const config: SocketIoConfig = { url: 'https://chsflask.herokuapp.com', options: {transports:["polling"]} };
+const config: SocketIoConfig = { url: 'https://almuchat.herokuapp.com', options: {transports:["polling"]} };
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +23,8 @@ const config: SocketIoConfig = { url: 'https://chsflask.herokuapp.com', options:
     SocketIoModule.forRoot(config)
     ],
   providers: [
-    SocketService,
     StatusBar,
+    UserInfoProvider,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
