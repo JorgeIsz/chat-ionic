@@ -11,4 +11,11 @@ export class UserInfoProvider{
         this.username = username
         this.room = room
     }
+
+    public getInfo(){
+        return {
+            username:this.username,
+            room:this.room
+        }
+    }
 }

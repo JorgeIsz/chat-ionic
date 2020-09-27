@@ -20,4 +20,8 @@ export class ListaPage implements OnInit {
   ngOnInit() {
   }
 
+  onClickRoom(index:number){
+    console.log(index);
+    
+  }
 }

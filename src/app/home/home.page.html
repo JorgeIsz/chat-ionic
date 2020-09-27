@@ -10,7 +10,7 @@
 
     <div 
     *ngFor="let m of mensajes"
-      [class]="m.usuario==usuario?'mensaje-yo':'mensaje'"
+      [class]="m.idUsuario==userInfo.username ? 'mensaje-yo':'mensaje'"
     >
     <label>{{m.texto}}</label>
     </div>

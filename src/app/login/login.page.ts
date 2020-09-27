@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
   onClickContinuar(){
     if(this.username && this.room){
       this.userInfoPvdr.setInfo(this.username,this.room)
-      this.router.navigate(['/lista'])
+      this.router.navigate(['/home'])
     }
     else
       this.mostrarToast()
